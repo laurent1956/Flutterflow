@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "195542981275",
+    "project_id": "cats-74c02",
+    "storage_bucket": "cats-74c02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195542981275:android:10b02ebdb6ec5364fc443e",
+        "android_client_info": {
+          "package_name": "com.flutterflow.cats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195542981275-2pf2c060lgd143q84djm9u8e1jlsp6ea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjByXpcfVk1fDC709H4VeAvN-lEP9sFi0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195542981275-2pf2c060lgd143q84djm9u8e1jlsp6ea.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "195542981275-5qa0ps3j1qsnji2f4e68hbq9mcc3etc4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.cats"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
