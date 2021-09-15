@@ -3,18 +3,18 @@ import 'package:google_fonts/google_fonts.dart';
 
 // ignore: avoid_classes_with_only_static_members
 class FlutterFlowTheme {
-  static const Color primaryColor = Color(0xFF3474E0);
-  static const Color secondaryColor = Color(0xFFEE8B60);
-  static const Color tertiaryColor = Color(0xFFFFFFFF);
+  static const Color primaryColor = Color(0xFFD83018);
+  static const Color secondaryColor = Color(0xFFF1F4F8);
+  static const Color tertiaryColor = Color(0xFF8B97A2);
 
   String primaryFontFamily = 'Poppins';
   String secondaryFontFamily = 'Roboto';
 
   static TextStyle get title1 => GoogleFonts.getFont(
-        'Poppins',
-        color: Color(0xFF303030),
+        'Playfair Display',
+        color: Colors.black,
         fontWeight: FontWeight.w600,
-        fontSize: 24,
+        fontSize: 22,
       );
   static TextStyle get title2 => GoogleFonts.getFont(
         'Poppins',
@@ -29,10 +29,10 @@ class FlutterFlowTheme {
         fontSize: 20,
       );
   static TextStyle get subtitle1 => GoogleFonts.getFont(
-        'Poppins',
-        color: Color(0xFF757575),
+        'Playfair Display',
+        color: secondaryColor,
         fontWeight: FontWeight.w500,
-        fontSize: 18,
+        fontSize: 16,
       );
   static TextStyle get subtitle2 => GoogleFonts.getFont(
         'Poppins',
@@ -41,14 +41,14 @@ class FlutterFlowTheme {
         fontSize: 16,
       );
   static TextStyle get bodyText1 => GoogleFonts.getFont(
-        'Poppins',
-        color: Color(0xFF303030),
+        'Playfair Display',
+        color: tertiaryColor,
         fontWeight: FontWeight.normal,
         fontSize: 14,
       );
   static TextStyle get bodyText2 => GoogleFonts.getFont(
-        'Poppins',
-        color: Color(0xFF424242),
+        'Playfair Display',
+        color: Colors.black,
         fontWeight: FontWeight.normal,
         fontSize: 14,
       );

@@ -5,15 +5,28 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 
 import 'schema/users_record.dart';
+import 'schema/posts_record.dart';
 import 'schema/serializers.dart';
 
+export 'package:cloud_firestore/cloud_firestore.dart';
+export 'schema/index.dart';
+export 'schema/serializers.dart';
+
 export 'schema/users_record.dart';
+export 'schema/posts_record.dart';
 
 Stream<List<UsersRecord>> queryUsersRecord(
         {Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(UsersRecord.collection, UsersRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Stream<List<PostsRecord>> queryPostsRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(PostsRecord.collection, PostsRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(
@@ -27,7 +40,13 @@ Stream<List<T>> queryCollection<T>(
     query = query.limit(singleRecord ? 1 : limit);
   }
   return query.snapshots().map((s) => s.docs
-      .map((d) => serializers.deserializeWith(serializer, serializedData(d)))
+      .map(
+        (d) => safeGet(
+          () => serializers.deserializeWith(serializer, serializedData(d)),
+          (e) => print('Error serializing doc ${d.reference.path}:\n$e'),
+        ),
+      )
+      .where((d) => d != null)
       .toList());
 }
 
@@ -44,6 +63,7 @@ Future maybeCreateUser(User user) async {
     displayName: user.displayName,
     photoUrl: user.photoURL,
     uid: user.uid,
+    phoneNumber: user.phoneNumber,
     createdTime: getCurrentTimestamp,
   );
 
